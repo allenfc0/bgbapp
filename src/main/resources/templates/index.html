@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+
+    <!--CSS References-->
+    <link rel="stylesheet" th:href="@{css/style.css}" type="text/css">
+
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <title>Gabby's Coffee Shop</title>
+
+</head>
+<body>
+    <div id="background">
+        <input type="checkbox" id="check">
+        <div class="header">
+            <a id="logo" href="#">Logo</a>
+
+            <div class="nav-links">
+                <a href="index">Home</a>
+                <a href="about">About</a>
+                <a href="jobs">Jobs</a>
+                <a href="services">Services</a>
+                <a href="contact">Contact</a>
+            </div>
+
+            <label for="check">
+                <i class="fas fa-bars menu-btn"></i>
+                <i class="fas fa-times close-btn"></i>
+            </label>
+
+        </div>
+            <div class="content">
+                <h1 id="site-title">Gabby's Coffee<span><br>Shop</span></h1>
+                <p id="site-desc">
+                    In vitae odio viverra, placerat tortor sit amet, maximus ligula. Fusce ultricies eros metus, eget pharetra odio scelerisque a. 
+                    Cras tincidunt ex non magna pellentesque euismod. Pellentesque a massa tristique, tristique sapien efficitur, tristique ante. 
+                    Mauris risus arcu, auctor sed eleifend vitae, porttitor at diam. Maecenas non justo condimentum, faucibus arcu quis, tempor mi. 
+                    Maecenas molestie egestas velit, quis tristique ipsum elementum a. In at sollicitudin leo. 
+                    Proin neque nisi, aliquam posuere pellentesque eget, iaculis consectetur metus. 
+                    Vivamus scelerisque tortor volutpat orci faucibus rhoncus. Nullam pretium ante ac tincidunt posuere. 
+                    Morbi rutrum ultrices ipsum at porttitor. Donec eu tellus massa. In fringilla tincidunt leo in suscipit.
+                </p>
+                <a href="services" id="btn">Place Order?</a>
+            </div>
+
+            <div id="follow">
+                <h4>Follow us!</h4>
+                <div class="media-icons">
+                    <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                </div> 
+            </div>
+            
+
+    </div>
+
+        
+
+    
+</body>
+</html>
