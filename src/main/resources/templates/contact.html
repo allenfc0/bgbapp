@@ -49,7 +49,7 @@
                     <a href="tel:9999999999">(999) 999-999</a>
                 </div>
                 <br>
-                <form action="" class="contact-email">
+                <form th:action="@{/sendEmail}" class="contact-email"  method="post">
                     <fieldset id="email-info">
                         <legend><h2 class="contact-header">Send us an email</h2></legend>
                         <div id="all-inputs">
