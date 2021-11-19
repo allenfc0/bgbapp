@@ -36,11 +36,11 @@ public class ContactController {
 
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("allenfarias30@gmail.com", "16dpr0887l");
+                return new PasswordAuthentication("email goes here", "password goes here");
             }
         });
         Message msg = new MimeMessage(session);
-        msg.setFrom(new InternetAddress("allenfarias29@gmail.com", false));
+        msg.setFrom(new InternetAddress("email goes here", false));
 
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
         msg.setSubject(title);
