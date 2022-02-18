@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.activation.*;
-
 
 @Controller
 public class ContactController {
@@ -27,7 +25,7 @@ public class ContactController {
     }
 
 
-    private void sendEmail(String email, String title, String message) throws AddressException, MessagingException, IOException {
+    private void sendEmail(String fromEmail, String subject, String message) throws AddressException, MessagingException, IOException {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -35,18 +33,22 @@ public class ContactController {
         props.put("mail.smtp.port", "587");
 
         Session session = Session.getInstance(props, new Authenticator() {
+            @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("email goes here", "password goes here");
+                return new PasswordAuthentication("allenfarias30@gmail.com", "16dpr0887l");
             }
         });
-        Message msg = new MimeMessage(session);
-        msg.setFrom(new InternetAddress("email goes here", false));
 
-        msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-        msg.setSubject(title);
-        msg.setContent(message, "text/html");
+        Message msg = new MimeMessage(session);
+        msg.setFrom(new InternetAddress(fromEmail));
+
+        msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("allenfarias30@gmail.com"));
+        msg.setSubject(subject);
+        msg.setText(message);
         msg.setSentDate(new Date());
 
+
+        //---------Adding attachments to the email but not needed for now
         /*MimeBodyPart messageBodyPart = new MimeBodyPart();
         messageBodyPart.setContent("Tutorials point email", "text/html");
 

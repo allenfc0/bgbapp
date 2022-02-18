@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:security="http://www.springframework.org/security/tags">
 <head>
     <meta charset="UTF-8">
 
@@ -27,14 +29,18 @@
     <div id="background">
         <input type="checkbox" id="check">
         <div class="header">
-            <a id="logo" href="#">Logo</a>
+            <a id="logo" href="#">Hello ${pageContext.request.userPrincipal.name}</a>
 
             <div class="nav-links">
                 <a href="index">Home</a>
                 <a href="about">About</a>
                 <a href="jobs">Jobs</a>
-                <a href="services">Services</a>
                 <a href="contact">Contact</a>
+                <a href="contact">Contact</a>
+                <a th:if="${loginBtn}" th:href="@{login}" th:text="${loginBtn}"></a>
+                <a th:if="${signupBtn}" th:href="@{signup}" th:text="${signupBtn}"></a>
+                <a th:if="${logoutBtn}" th:href="@{logout}" th:text="${logoutBtn}"></a>
+
             </div>
 
             <label for="check">
@@ -54,7 +60,7 @@
                     Vivamus scelerisque tortor volutpat orci faucibus rhoncus. Nullam pretium ante ac tincidunt posuere. 
                     Morbi rutrum ultrices ipsum at porttitor. Donec eu tellus massa. In fringilla tincidunt leo in suscipit.
                 </p>
-                <a href="services" id="btn">Place Order?</a>
+                <a href="services" id="btn">Place Order</a>
             </div>
 
             <div id="follow">

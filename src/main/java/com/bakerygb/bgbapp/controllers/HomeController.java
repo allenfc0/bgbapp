@@ -1,17 +1,35 @@
 package com.bakerygb.bgbapp.controllers;
 
 
+import com.bakerygb.bgbapp.models.User;
+import com.bakerygb.bgbapp.services.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @Slf4j
 public class HomeController {
 
-    @GetMapping({"/", "/index"})
-    public String getHome() {
+    //private User newUser;
 
+    private final UserService userService;
+
+    @Autowired
+    public HomeController(UserService userService){
+        this.userService = userService;
+    }
+
+    @GetMapping({"/", "/index"})
+    public String getHome(Model m) {
+        m.addAttribute("loginBtn", "Log In");
+        m.addAttribute("signupBtn", "Sign Up");
         return "index";
     }
 
@@ -38,6 +56,26 @@ public class HomeController {
 
         return "contact";
     }
+
+    @RequestMapping({"/login"})
+    public String getLogin() {
+
+        return "login";
+    }
+
+    @RequestMapping("/signup")
+    public String getSignup() {
+
+        return "signup";
+    }
+
+    @RequestMapping({"/logout-success"})
+    public String getLogout() {
+
+        return "login";
+    }
+
+
 }
 
 
