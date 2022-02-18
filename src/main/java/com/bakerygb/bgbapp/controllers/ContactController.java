@@ -35,7 +35,7 @@ public class ContactController {
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("allenfarias30@gmail.com", "16dpr0887l");
+                return new PasswordAuthentication("allenfarias30@gmail.com", "passwordgoeshere");
             }
         });
 
